@@ -5,6 +5,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0007-reverse-integer](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0007-reverse-integer/) | Medium |
+| [0009-palindrome-number](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0009-palindrome-number/) | Easy |
 | [0342-power-of-four](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0342-power-of-four/) | Easy |
 ## Bit Manipulation
 | Problem Name | Difficulty |
