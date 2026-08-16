@@ -1,7 +1,7 @@
 # 🧩 LeetCode Solutions
 
 ![Java](https://img.shields.io/badge/Language-Java-orange?style=flat-square&logo=java)
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-2-brightgreen?style=flat-square)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-7-brightgreen?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
 A collection of my LeetCode problem-solving journey — clean, commented Java solutions with explanations and complexity analysis.
@@ -12,8 +12,46 @@ A collection of my LeetCode problem-solving journey — clean, commented Java so
 
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
+| 1 | [Two Sum](#1-two-sum) | 🟢 Easy | [Jump](#1-two-sum) |
 | 7 | [Reverse Integer](#7-reverse-integer) | 🟠 Medium | [Jump](#7-reverse-integer) |
 | 9 | [Palindrome Number](#9-palindrome-number) | 🟢 Easy | [Jump](#9-palindrome-number) |
+| 231 | [Power of Two](#231-power-of-two) | 🟢 Easy | [Jump](#231-power-of-two) |
+| 326 | [Power of Three](#326-power-of-three) | 🟢 Easy | [Jump](#326-power-of-three) |
+| 342 | [Power of Four](#342-power-of-four) | 🟢 Easy | [Jump](#342-power-of-four) |
+| 509 | [Fibonacci Number](#509-fibonacci-number) | 🟢 Easy | [Jump](#509-fibonacci-number) |
+
+---
+
+## 1. Two Sum
+
+**Problem:** Given an array of integers `nums` and an integer `target`, return the indices of the two numbers such that they add up to `target`.
+
+```java
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] ans = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    ans[0] = i;
+                    ans[1] = j;
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
+
+**Approach**
+- Brute force: check every pair `(i, j)` with `j > i` and see if they sum to `target`.
+- Once a matching pair is found, store their indices.
+
+**Complexity**
+- ⏱ Time: `O(n²)` — nested loop over all pairs
+- 💾 Space: `O(1)` (excluding the output array)
+
+> 💡 **Optimization tip:** This can be improved to `O(n)` using a `HashMap` to store each number's complement as you iterate, avoiding the nested loop.
 
 ---
 
@@ -92,6 +130,139 @@ class Solution {
 
 **Complexity**
 - ⏱ Time: `O(log₁₀ x)`
+- 💾 Space: `O(1)`
+
+---
+
+## 231. Power of Two
+
+**Problem:** Given an integer `n`, return `true` if it is a power of two, and `false` otherwise.
+
+```java
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if (n < 1) {
+            return false;
+        } else if (n == 1) {
+            return true;
+        } else {
+            while (n % 2 == 0) {
+                n = n / 2;
+            }
+            return n == 1;
+        }
+    }
+}
+```
+
+**Approach**
+- Powers of two must be positive, so any `n < 1` is immediately `false`.
+- Repeatedly divide `n` by `2` as long as it's evenly divisible.
+- If what remains is exactly `1`, the original number was a pure power of two.
+
+**Complexity**
+- ⏱ Time: `O(log₂ n)`
+- 💾 Space: `O(1)`
+
+> 💡 **Optimization tip:** A power of two has exactly one bit set, so `(n & (n - 1)) == 0` (for `n > 0`) solves this in `O(1)`.
+
+---
+
+## 326. Power of Three
+
+**Problem:** Given an integer `n`, return `true` if it is a power of three, and `false` otherwise.
+
+```java
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if (n < 1) {
+            return false;
+        } else if (n == 1) {
+            return true;
+        } else {
+            while (n % 3 == 0) {
+                n = n / 3;
+            }
+            return n == 1;
+        }
+    }
+}
+```
+
+**Approach**
+- Same divide-and-check pattern as Power of Two, but dividing by `3` instead.
+- Keep dividing while evenly divisible; if `1` remains, `n` was a power of three.
+
+**Complexity**
+- ⏱ Time: `O(log₃ n)`
+- 💾 Space: `O(1)`
+
+---
+
+## 342. Power of Four
+
+**Problem:** Given an integer `n`, return `true` if it is a power of four, and `false` otherwise.
+
+```java
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        if (n < 1) {
+            return false;
+        } else if (n == 1) {
+            return true;
+        } else {
+            while (n % 4 == 0) {
+                n = n / 4;
+            }
+            return n == 1;
+        }
+    }
+}
+```
+
+**Approach**
+- Same pattern again, dividing by `4` this time.
+- Keep dividing while evenly divisible; if `1` remains, `n` was a power of four.
+
+**Complexity**
+- ⏱ Time: `O(log₄ n)`
+- 💾 Space: `O(1)`
+
+---
+
+## 509. Fibonacci Number
+
+**Problem:** The Fibonacci numbers form a sequence where each number is the sum of the two preceding ones, starting from `0` and `1`. Given `n`, calculate `F(n)`.
+
+```java
+class Solution {
+    public int fib(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
+
+        int firstTerm = 0;
+        int secondTerm = 1;
+
+        for (int i = 1; i <= n; i++) {
+            int thirdTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = thirdTerm;
+        }
+
+        return firstTerm;
+    }
+}
+```
+
+**Approach**
+- Handle the base cases `F(0) = 0` and `F(1) = 1` directly.
+- Iteratively build up the sequence, tracking only the last two terms instead of using recursion or extra memory for the whole sequence.
+
+**Complexity**
+- ⏱ Time: `O(n)`
 - 💾 Space: `O(1)`
 
 ---
