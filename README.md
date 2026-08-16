@@ -272,3 +272,19 @@ class Solution {
 This repo tracks my progress solving LeetCode problems, mainly in Java, with a focus on writing clean, efficient, and well-explained solutions.
 
 ⭐ Feel free to star the repo if you find it useful, and PRs/suggestions are welcome!
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0342-power-of-four](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0342-power-of-four/) | Easy |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0342-power-of-four](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0342-power-of-four/) | Easy |
+## Recursion
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0342-power-of-four](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0342-power-of-four/) | Easy |
+<!---LeetCode Topics End-->
