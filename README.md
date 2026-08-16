@@ -13,4 +13,12 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0342-power-of-four](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0342-power-of-four/) | Easy |
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0001-two-sum](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0001-two-sum/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0001-two-sum](https://github.com/Ghoshrijit2004/Leetcode/tree/main/0001-two-sum/) | Easy |
 <!---LeetCode Topics End-->
